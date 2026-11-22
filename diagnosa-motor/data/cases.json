@@ -1,0 +1,62 @@
+[
+  {
+    "code": "K01",
+    "name": "Sistem Pengapian",
+    "urgency": "segera",
+    "warning": "Potensi mogok tiba-tiba di jalan bila pengapian mati total.",
+    "symptoms": [
+      { "code": "G02", "weight": 0.8 },
+      { "code": "G03", "weight": 0.6 },
+      { "code": "G08", "weight": 0.5 }
+    ],
+    "solution": "Periksa busi, koil, dan CDI. Bersihkan atau ganti busi, lalu cek tegangan koil."
+  },
+  {
+    "code": "K02",
+    "name": "Sistem Bahan Bakar",
+    "urgency": "segera",
+    "warning": "Campuran bensin tidak stabil, tarikan ngempos dan rawan mati.",
+    "symptoms": [
+      { "code": "G01", "weight": 0.7 },
+      { "code": "G02", "weight": 0.8 },
+      { "code": "G03", "weight": 0.6 },
+      { "code": "G08", "weight": 0.5 }
+    ],
+    "solution": "Cek filter bensin, pompa bahan bakar, dan injektor atau karburator. Bersihkan saluran yang tersumbat."
+  },
+  {
+    "code": "K03",
+    "name": "Sistem Kelistrikan / Aki",
+    "urgency": "tunda",
+    "warning": "Starter elektrik dan klakson bisa melemah sewaktu-waktu.",
+    "symptoms": [
+      { "code": "G02", "weight": 0.8 },
+      { "code": "G04", "weight": 0.5 }
+    ],
+    "solution": "Ukur tegangan aki dan cek kiprok serta spul. Ganti aki bila tegangan tidak stabil."
+  },
+  {
+    "code": "K04",
+    "name": "Sistem Pendinginan / Pelumasan",
+    "urgency": "jangan-dikendarai",
+    "warning": "Jangan dikendarai dulu! Risiko piston macet parah akibat kekurangan oli atau overheat.",
+    "symptoms": [
+      { "code": "G05", "weight": 0.7 },
+      { "code": "G07", "weight": 0.8 },
+      { "code": "G10", "weight": 0.6 }
+    ],
+    "solution": "Periksa level oli dan cairan pendingin, cek seal, dan ganti oli sesuai jadwal."
+  },
+  {
+    "code": "K05",
+    "name": "Sistem CVT / Transmisi",
+    "urgency": "segera",
+    "warning": "V-belt berisiko aus atau putus saat akselerasi.",
+    "symptoms": [
+      { "code": "G01", "weight": 0.7 },
+      { "code": "G06", "weight": 0.8 },
+      { "code": "G09", "weight": 0.7 }
+    ],
+    "solution": "Bongkar dan bersihkan CVT. Periksa V-belt, roller, kampas ganda, dan pulley."
+  }
+]

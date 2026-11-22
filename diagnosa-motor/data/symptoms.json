@@ -1,0 +1,72 @@
+[
+  {
+    "code": "G01",
+    "label": "Tenaga motor loyo, tarikan terasa berat",
+    "weight": 0.7,
+    "group": "Mesin",
+    "aliases": ["loyo", "ngempos", "berat", "tarikan berat", "kurang tenaga", "lelet"]
+  },
+  {
+    "code": "G02",
+    "label": "Mesin sulit dihidupkan",
+    "weight": 0.8,
+    "group": "Mesin",
+    "aliases": ["susah hidup", "mogok", "starter susah", "engkol", "starter ngadat", "gak mau nyala"]
+  },
+  {
+    "code": "G03",
+    "label": "Mesin brebet atau busi sering basah",
+    "weight": 0.6,
+    "group": "Bahan bakar & asap",
+    "aliases": ["brebet", "berebet", "tersendat", "busi basah", "ndut-ndutan", "mati-matian"]
+  },
+  {
+    "code": "G04",
+    "label": "Lampu redup, aki cepat habis",
+    "weight": 0.5,
+    "group": "Kelistrikan",
+    "aliases": ["aki tekor", "aki soak", "lampu redup", "klakson sember", "tekor", "kelistrikan"]
+  },
+  {
+    "code": "G05",
+    "label": "Knalpot mengeluarkan asap putih atau hitam",
+    "weight": 0.7,
+    "group": "Bahan bakar & asap",
+    "aliases": ["ngebul", "asap putih", "asap hitam", "knalpot berasap", "berasap", "kebul"]
+  },
+  {
+    "code": "G06",
+    "label": "Bunyi kasar atau berdecit dari area CVT",
+    "weight": 0.8,
+    "group": "Bunyi & getaran",
+    "aliases": ["berdecit", "kasar", "suara tikus", "mencit", "cvt kasar", "bunyi cit cit"]
+  },
+  {
+    "code": "G07",
+    "label": "Mesin cepat panas (overheat)",
+    "weight": 0.8,
+    "group": "Mesin",
+    "aliases": ["overheat", "panas", "mesin panas", "suhu tinggi", "radiator mendidih"]
+  },
+  {
+    "code": "G08",
+    "label": "Bahan bakar boros",
+    "weight": 0.5,
+    "group": "Bahan bakar & asap",
+    "aliases": ["boros", "bensin boros", "bbm boros", "bensin cepat habis"]
+  },
+  {
+    "code": "G09",
+    "label": "Getaran atau hentakan saat gas awal",
+    "weight": 0.7,
+    "group": "Bunyi & getaran",
+    "aliases": ["gredek", "getar", "hentakan", "gas awal gredek", "ndut", "getar cvt"]
+  },
+  {
+    "code": "G10",
+    "label": "Oli cepat berkurang atau ada rembesan",
+    "weight": 0.6,
+    "group": "Mesin",
+    "aliases": ["oli rembes", "oli bocor", "oli susut", "oli berkurang", "bocor oli", "rembesan"]
+  }
+]

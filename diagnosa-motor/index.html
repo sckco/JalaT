@@ -16,9 +16,15 @@
     <div class="band" aria-hidden="true"></div>
     <header class="glass">
       <i class="rv"></i><i class="rv"></i><i class="rv"></i><i class="rv"></i>
-      <div class="logo">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 6a10 10 0 0 0-8 14L7 35a4 4 0 0 0 6 6l15-15a10 10 0 0 0 14-8l-6 4-5-1-1-5z"/></svg>
-        <h1>Jala<b>T</b></h1>
+      <div class="header-top">
+        <div class="logo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 6a10 10 0 0 0-8 14L7 35a4 4 0 0 0 6 6l15-15a10 10 0 0 0 14-8l-6 4-5-1-1-5z"/></svg>
+          <h1>Jala<b>T</b></h1>
+        </div>
+        <button type="button" id="ecoBtn" class="eco-btn" aria-pressed="false" title="Mode hemat baterai & memori (matikan animasi berat & blur)">
+          <span class="eco-led"></span>
+          <span class="eco-label">HEMAT: <b id="ecoStatus">OFF</b></span>
+        </button>
       </div>
       <p class="tag">JalaT: Gejala moTor, terjaring jelas.</p>
       <div class="lamps">
@@ -32,11 +38,104 @@
   </div>
 
   <h2>Centang gejalanya</h2>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" id="searchInput" placeholder="Cari gejala atau istilah awam (misal: brebet, loyo, aki)..." aria-label="Cari gejala atau istilah awam">
+    </div>
+  </div>
+
+  <div id="noSymptoms" class="no-symptoms" hidden>Gejala tidak ditemukan</div>
   <div class="list" id="symptoms"></div>
 
   <section id="resSec" hidden>
-    <h2>Nota diagnosa</h2>
+    <div class="results-head">
+      <h2>Nota diagnosa</h2>
+      <div class="results-actions">
+        <button type="button" class="btn-action" id="copyBtn" title="Salin ringkasan hasil ke clipboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Salin Hasil
+        </button>
+        <button type="button" class="btn-action" id="printBtn" title="Cetak nota hasil diagnosa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Cetak Nota
+        </button>
+      </div>
+    </div>
+    <div id="confidenceBanner" class="conf-banner" hidden>
+      <svg class="conf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <div>Gejala belum cukup spesifik. Hasil di bawah hanya petunjuk awal, sebaiknya periksa ke bengkel.</div>
+    </div>
     <div id="results"></div>
+  </section>
+
+  <footer class="site-footer">
+    <p>JalaT hanya diagnosa awal dan tidak menggantikan pemeriksaan mekanik.</p>
+    <button type="button" id="mechToggle" class="mech-toggle-btn" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Mode Mekanik (Retain Kasus Baru)
+    </button>
+  </footer>
+
+  <section id="mechPanel" class="mech-panel glass" hidden aria-label="Mode Mekanik - Retain CBR">
+    <div class="mech-header">
+      <div class="mech-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <h3>Mode Mekanik: Tambah & Retain Kasus Baru</h3>
+      </div>
+      <button type="button" id="mechClose" class="mech-close" aria-label="Tutup panel mekanik">✕</button>
+    </div>
+    <p class="mech-desc">Simpan pengalaman perbaikan baru ke dalam memori sesi (siklus Retain CBR). Kasus ini langsung ikut dihitung dalam diagnosa.</p>
+
+    <div id="mechError" class="mech-error" hidden role="alert"></div>
+
+    <form id="mechForm">
+      <div class="f-row">
+        <div class="f-grp">
+          <label for="newCaseCode">Kode Kasus</label>
+          <input type="text" id="newCaseCode" required placeholder="K06">
+        </div>
+        <div class="f-grp">
+          <label for="newCaseName">Nama Sistem / Kerusakan</label>
+          <input type="text" id="newCaseName" required placeholder="Contoh: Sistem Rem Cakram Depan">
+        </div>
+      </div>
+
+      <div class="f-row">
+        <div class="f-grp">
+          <label for="newCaseUrgency">Tingkat Urgensi</label>
+          <select id="newCaseUrgency">
+            <option value="tunda">Tunda (Pemeriksaan berkala)</option>
+            <option value="segera" selected>Segera (Periksa segera)</option>
+            <option value="jangan-dikendarai">Jangan Dikendarai (Bahaya fatal)</option>
+          </select>
+        </div>
+        <div class="f-grp">
+          <label for="newCaseWarning">Peringatan Keselamatan (Opsional)</label>
+          <input type="text" id="newCaseWarning" placeholder="Contoh: Rem blong berisiko fatal di turunan!">
+        </div>
+      </div>
+
+      <div class="f-grp">
+        <label for="newCaseSolution">Saran Perbaikan / Solusi Awal</label>
+        <textarea id="newCaseSolution" rows="2" required placeholder="Contoh: Kuras minyak rem, ganti kampas rem aus, lalu bleeding angin palsu."></textarea>
+      </div>
+
+      <div class="f-grp">
+        <label>Pilih Gejala & Sesuaikan Bobot Spesifik:</label>
+        <div id="mechSymptomsList" class="mech-sym-grid"></div>
+      </div>
+
+      <div class="mech-actions">
+        <button type="submit" class="btn go" id="saveCaseBtn">Simpan ke Memori Sesi</button>
+        <button type="button" class="btn rs" id="exportCasesBtn">Ekspor cases.json</button>
+      </div>
+    </form>
   </section>
 </main>
 

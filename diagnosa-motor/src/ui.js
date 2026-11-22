@@ -25,12 +25,12 @@ const tone = (percentage) => (percentage < 40 ? "var(--red)" : percentage < 70 ?
 /** Jarum ukur untuk peringkat 1. */
 function gauge(result, index) {
   const p = result.percentage;
-  return `<svg class="gauge" viewBox="0 0 200 124" role="img" aria-label="Kemiripan ${p.toFixed(1)} persen" style="--gc:${tone(p)};--i:${index};--p:${p};--a:${p * 1.8 - 90}deg">
+  return `<svg class="gauge" viewBox="0 0 200 154" role="img" aria-label="Kemiripan ${p.toFixed(1)} persen" style="--gc:${tone(p)};--i:${index};--p:${p};--a:${p * 1.8 - 90}deg">
    <path class="tr" d="M20 100A80 80 0 0 1 180 100" fill="none" stroke-width="14" stroke-linecap="round" pathLength="100"/>
    <path class="fl" d="M20 100A80 80 0 0 1 180 100" fill="none" stroke-width="14" stroke-linecap="round" pathLength="100" stroke-dasharray="100"/>
    <g class="nd"><path d="M100 100L96 100L100 30L104 100Z" fill="#1d1b16"/></g>
    <circle cx="100" cy="100" r="9" fill="#1d1b16"/><circle cx="100" cy="100" r="3" fill="#ffc400"/>
-   <text class="gv" x="100" y="122">${p.toFixed(1)}%</text></svg>`;
+   <text class="gv" x="100" y="148">${p.toFixed(1)}%</text></svg>`;
 }
 
 /** Sepuluh segmen bahan bakar untuk peringkat 2–5. */

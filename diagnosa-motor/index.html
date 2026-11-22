@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JalaT – Gejala moTor, terjaring jelas</title>
+</head>
+<body>
+<div class="toast glass" id="toast" role="alert">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M3 12h3V9h4V7h6v2h3l2 3h4v4h-3v5H14l-3-3H7v-3H3z"/></svg>
+  <span id="tmsg"></span>
+</div>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="band" aria-hidden="true"></div>
+    <header class="glass">
+      <i class="rv"></i><i class="rv"></i><i class="rv"></i><i class="rv"></i>
+      <div class="logo">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M30 6a10 10 0 0 0-8 14L7 35a4 4 0 0 0 6 6l15-15a10 10 0 0 0 14-8l-6 4-5-1-1-5z"/></svg>
+        <h1>Jala<b>T</b></h1>
+      </div>
+      <p class="tag">JalaT: Gejala moTor, terjaring jelas.</p>
+      <div class="lamps">
+        <span class="lp" style="--k:0;--c:#e5392f"><i></i>OLI</span>
+        <span class="lp" style="--k:1;--c:#ffc400"><i></i>AKI</span>
+        <span class="lp" style="--k:2;--c:#ff7a1a"><i></i>MESIN</span>
+        <span class="lp" style="--k:3;--c:#3ddc84"><i></i>SIAP</span>
+        <span class="odo">GEJALA <span id="count">00</span> /10</span>
+      </div>
+    </header>
+  </div>
+
+  <h2>Centang gejalanya</h2>
+  <div class="list" id="symptoms"></div>
+
+  <section id="resSec" hidden>
+    <h2>Nota diagnosa</h2>
+    <div id="results"></div>
+  </section>
+</main>
+
+<nav class="dock glass" aria-label="Aksi">
+  <button class="btn rs" id="reset" type="button">Kosongkan</button>
+  <button class="btn go" id="run" type="button">Cek Sekarang</button>
+</nav>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
